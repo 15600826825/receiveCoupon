@@ -6,6 +6,7 @@ Page({
    */
   data: {
     tradeNo:'',
+    courseId:'',
     contentData: [],
     courseSection: [],
     userCourse: {},
@@ -23,9 +24,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    // this.setData({
-    //   tradeNo: options.tradeNo
-    // })
+    this.setData({
+      tradeNo: '201809062213813681536223325682'
+    })
     // http://bb95cc17.ngrok.io/center/mini/get?goodsId=course__3117919FEABB46529D1EE0E82E0B537C&tradeNo=201809062213813681536223325682&token=C9B2AACA58FD456C9FEDD7E573D008C7
     wx.request({
       // url: "http://bb95cc17.ngrok.io/center/mini/get?goodsId=" + options.goodsId,
@@ -43,6 +44,7 @@ Page({
         var contentData = [];
         if (res.data.code == 0) {
           that.setData({
+            courseId: res.data.data.courseId,
             contentData: res.data.data,
             userCourse: res.data.data.userCourse,
             courseSection: res.data.data.courseChapter[0].courseSection,
@@ -56,10 +58,10 @@ Page({
   bindSelectSection:function(e){
     var sectionId = e.currentTarget.dataset.id, sectionType = e.currentTarget.dataset.type;
     if (sectionType == 1){
-      wx.navigateTo({ url: `../coursevideo/coursevideo?sectionId=${sectionId}&tradeNo=${this.data.tradeNo}` })
+      wx.navigateTo({ url: `../coursevideo/coursevideo?sectionId=${sectionId}&tradeNo=${this.data.tradeNo}&courseId=${this.data.courseId}` })
     }
     else if (sectionType == 2){
-      wx.navigateTo({ url: `../coursepdf/coursepdf?sectionId=${sectionId}&tradeNo=${this.data.tradeNo}` })
+      wx.navigateTo({ url: `../coursepdf/coursepdf?sectionId=${sectionId}&tradeNo=${this.data.tradeNo}&courseId=${this.data.courseId}` })
     }
     else{
       wx.showToast({
@@ -73,10 +75,10 @@ Page({
 
   learnCourse:function(e){
     if (this.data.userCourse.sectionType == 1) {
-      wx.navigateTo({ url: `../coursevideo/coursevideo?sectionId=${this.data.userCourse.sectionId}&tradeNo=${this.data.tradeNo}` })
+      wx.navigateTo({ url: `../coursevideo/coursevideo?sectionId=${this.data.userCourse.sectionId}&tradeNo=${this.data.tradeNo}&courseId=${this.data.courseId}` })
     }
     else if (this.data.userCourse.sectionType == 2) {
-      wx.navigateTo({ url: `../coursepdf/coursepdf?sectionId=${this.data.userCourse.sectionId}&tradeNo=${this.data.tradeNo}` })
+      wx.navigateTo({ url: `../coursepdf/coursepdf?sectionId=${this.data.userCourse.sectionId}&tradeNo=${this.data.tradeNo}&courseId=${this.data.courseId}` })
     }
     else {
       wx.showToast({

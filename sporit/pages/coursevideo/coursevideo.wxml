@@ -2,7 +2,7 @@
   <view class='coursevideo-top'>
       <view class='coursevideo-top-section'>{{contentData.name}}</view>
       <view class="coursevideo-top--video">
-        <video id="myVideo" class='coursevideo-top-video-play' poster="https://study.sporit.cn{{contentData.coverURL}}"    bindplay="bindplay" src="{{contentData.playURL}}"  objectFit='cover' binderror="videoErrorCallback" controls>
+        <video id="myVideo" class='coursevideo-top-video-play' poster="{{contentData.coverURL}}"    bindplay="bindplay" src="{{contentData.playURL}}"  objectFit='cover' binderror="videoErrorCallback" bindpause='bindpause'  bindended='bindended' bindtimeupdate='bindtimeupdate' initial-time='{{userCourseCurrentTime}}' controls>
         </video>
       </view> 
       <view class='course-top-comment'>

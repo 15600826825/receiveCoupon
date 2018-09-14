@@ -7,10 +7,15 @@ Page({
   data: {
     contentData:[],
     sectionId: '',
+    tradeNo:'',
+    courseId: '',
     comments:'',
     pageNo: 0,
     total: 0,
     buttonDisabled:true,
+    userCourseIsDone: 0,
+    userCourseTime: 0,
+    userCourseCurrentTime: 0,
     commentData:[],
   },
 
@@ -21,6 +26,7 @@ Page({
     var that = this;
     this.setData({
       sectionId: options.sectionId,
+      courseId: options.courseId,
       tradeNo: options.tradeNo
     })
     wx.request({
@@ -32,15 +38,18 @@ Page({
       success: function (res) {
         if (res.data.code == 0) {
           that.setData({
+            userCourseTime: res.data.data.durationInt,
             contentData: res.data.data,
           })
           wx.hideLoading();
         }
       }
     });
-    this.getCommentData(0);   
+    this.getCommentData(0); 
+    this.getRecordData();  
   },
 
+  //获取评论列表
   getCommentData: function (pageNo){
     var that = this;
     wx.request({
@@ -72,6 +81,58 @@ Page({
     });
   },
 
+  //获取学习记录
+  getRecordData:function(){
+    var that = this;
+    wx.request({
+      url: "http://bb95cc17.ngrok.io/learn/mini/record/get?connectId=" + this.data.sectionId,
+      data: {
+        token: wx.getStorageSync('openid'),
+        courseId: this.data.courseId,
+        tradeNo: this.data.tradeNo
+      },
+      method: "GET",
+      success: function (res) {
+        if (res.data.code == 0) {
+          var data = res.data.data;
+          if (data.userCourse){
+            that.setData({
+              userCourseIsDone: data.userCourse.userCourseIsDone
+            })
+            if (that.data.userCourseIsDone==0){
+              that.setData({
+                userCourseCurrentTime: data.userCourse.userCourseCurrentTime
+              })              
+            }
+          } 
+          wx.hideLoading();
+        }
+      }
+    });
+  },
+
+  postRecordData: function() {
+    var that = this;
+    wx.request({
+      url: "http://bb95cc17.ngrok.io/learn/mini/record?token=" + wx.getStorageSync('openid'),
+      data: {
+        sectionId: this.data.sectionId,
+        courseId: this.data.courseId,
+        tradeNo: this.data.tradeNo,
+        userCourseIsDone: this.data.userCourseIsDone,
+        userCourseCurrentTime: this.data.userCourseCurrentTime,
+        userCourseTime: this.data.userCourseTime
+      },
+      method: "POST",
+      success: function (res) {
+        if (res.data.code == 0) {
+        }
+      }
+    });
+  },
+
+
+  // 提交评价
   evaSubmit:function(e){  
     var that = this;
     if (this.data.comments){
@@ -113,12 +174,13 @@ Page({
     }
   },
 
+
   charChange: function (e) {
     this.setData({
       comments: e.detail.value
     });
   },
-
+// 点赞
   bindLike:function(e){
     let that = this, commentsId = e.currentTarget.dataset.id;
     wx.request({
@@ -149,8 +211,26 @@ Page({
 
 
   bindplay: function (e) {
+    if (this.data.userCourseIsDone==0){
+      this.postRecordData();
+    }
+  },
+
+  bindpause: function (e) {
+    if (this.data.userCourseIsDone == 0) {
+      this.postRecordData();
+    }
+  },
+
+  bindended: function (e) {
+    if (this.data.userCourseIsDone == 0) {
+      this.postRecordData();
+    }
+  },
+
+  bindtimeupdate: function (e) {
     this.setData({
-      tab_image: "none"
+      userCourseCurrentTime: parseInt(e.detail.currentTime)
     })
   },
 
@@ -159,6 +239,7 @@ Page({
     console.log(e.detail.errMsg)
   },
 
+// 加载更多评论
   loadMoreComment: function (e) {
     let that = this;
     if (this.data.total > this.data.commentData.length) {
@@ -193,7 +274,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    if (this.data.userCourseIsDone == 0) {
+      this.postRecordData();
+    }
   },
 
   /**
