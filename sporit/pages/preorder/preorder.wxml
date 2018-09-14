@@ -1,0 +1,37 @@
+<view class='page'>
+  <view class='preorder-top'>
+    <view class='preorder-top-left'></view>
+    <view class='preorder-top-right'>
+      <view class='preorder-top-right-title'>{{contentData.name}}</view>
+      <view class='preorder-top-right-info'>{{contentData.title}}</view>
+      <view class='preorder-top-right-price'>￥{{contentData.price}}</view>  
+    </view>
+  </view>
+
+   <view class='preorder-service'>
+      <view class='preorder-service-left' >
+        <switch class='switch' bindchange="switchChange"/>
+        <text class='preorder-service-text' bindtap='bindtapService'>选择服务包一起购买</text>
+      </view>
+      <image bindtap='bindtapService' class="preorder-service-icon" src="../../images/image/my-icon.png"></image>
+  </view>
+
+  <view class='preorder-coupon'bindtap='bindtapCoupon' >
+      <view class='preorder-coupon-left'>优惠券</view>
+      <image class="preorder-coupon-icon" src="../../images/image/my-icon.png"></image>
+  </view>
+
+  <view class='preorder-bottom'>
+      <view class='preorder-bottom-list'>
+        <view class='preorder-bottom-left'>商品金额</view>
+        <view class='preorder-bottom-right'>￥{{goodsPrice}}</view>
+      </view>
+      <view class='preorder-bottom-list'>
+        <view class='preorder-bottom-left'>优惠抵扣</view>
+        <view class='preorder-bottom-right'>-￥{{couponPrice}}</view>
+      </view>
+  </view>
+
+  <view class='preorder-button' bindtap='bindtapPayOrder'>立即购买</view>
+
+</view>

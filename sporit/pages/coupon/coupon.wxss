@@ -1,0 +1,89 @@
+view , page {
+  padding: 0px;
+  margin: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.coupon-warp{
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20rpx;
+  /* padding-bottom: 30rpx; */
+}
+
+.coupon-list{
+  margin: 0 30rpx 30rpx;
+  height: 236rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  background: url(https://study.sporit.cn/file_service/miniapp/coupon-background.png) no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.coupon-list-back-active{
+  background: #f54039 url(https://study.sporit.cn/file_service/miniapp/coupon-background.png) no-repeat;
+  background-size: cover;
+}
+
+.coupon-list-gary{
+  margin: 0 30rpx 30rpx;
+  height: 236rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  background: url(https://study.sporit.cn/file_service/miniapp/coupon-background-gary.png) no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.coupon-list-active{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.coupon-list-left{
+  width: 460rpx;
+  margin-left: 70rpx;
+  height: rpx;
+  float: left;
+  text-align: center;
+}
+
+.coupon-list-left-tip{
+  margin-top: 40rpx;
+}
+
+.coupon-list-left-price{
+  font-size: 70rpx;
+  font-weight: blod;
+}
+
+.coupon-list-left-date{
+  font-size: 24rpx;
+}
+
+.coupon-list-right{
+  width: 160rpx;
+  height: 186rpx;
+  overflow: hidden;
+  float: right;
+  text-align: center;
+  font-size: 36rpx;
+  padding-top: 30rpx;
+}
+
+.coupon-list-right-img{
+  width: 36rpx;
+  height: 36rpx;
+}
+

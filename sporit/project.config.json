@@ -1,0 +1,128 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.0",
+	"appid": "wxf4e75f4ac330a9de",
+	"projectname": "sporit",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": -1,
+					"name": "coursedetail",
+					"pathName": "pages/coursedetail/coursedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "programdetail",
+					"pathName": "pages/programdetail/programdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "learn",
+					"pathName": "pages/learn/learn",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "programlist",
+					"pathName": "pages/programlist/programlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mycourse",
+					"pathName": "pages/mycourse/mycourse",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coursevideo",
+					"pathName": "pages/coursevideo/coursevideo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coursepdf",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coursepdf",
+					"pathName": "pages/coursepdf/coursepdf",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coupon",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "information",
+					"pathName": "pages/information/information",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "preorder",
+					"pathName": "pages/preorder/preorder"
+				}
+			]
+		}
+	}
+}

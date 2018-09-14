@@ -1,0 +1,86 @@
+view , page {
+  padding: 0px;
+  margin: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.order-warp{
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20rpx;
+  /* padding-bottom: 30rpx; */
+}
+
+.order-list{
+  margin: 0 30rpx 30rpx;
+  padding: 30rpx;
+  overflow: hidden;
+  border-radius:8px;
+  box-shadow:4px 4px 10px rgba(212,212,212,1);
+  font-size: 26rpx;
+}
+
+.order-list-top{
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #F6F6F6;
+}
+
+.order-list-left{
+  width: 150rpx;
+  height: 150rpx;
+  float: left;
+  background: burlywood;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+}
+
+.order-list-right{
+  width: 450rpx;
+  overflow: hidden;
+  float: right;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+}
+
+.order-list-right-title{
+  color: #333;
+  font-size: 30rpx;
+  /* margin-bottom: 5rpx; */
+}
+
+.order-list-right-content{
+  width: 100%;
+  overflow: hidden;
+  height: 40rpx;
+  color: #666;
+}
+
+.order-list-right-content1{
+  float: left;
+  width: 130rpx;
+}
+
+.order-list-right-content2{
+  float: left;
+  color: #666;
+}
+
+.order-status{
+  color: #f54039;
+}
+
+.order-bottom{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+
+
+

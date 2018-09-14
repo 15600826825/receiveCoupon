@@ -1,0 +1,34 @@
+<!--index.wxml-->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}"
+    circular="true"
+    autoplay="true"
+    indicator-dots="true"
+    class="mainswiper"
+    indicator-color="rgba(255,255,255,1)"
+    indicator-active-color="#f54039"
+    >
+    <block wx:for="{{imgUrls}}" wx:key="key">
+      <swiper-item>
+        <view class="imageBox">
+          <image src="{{item.bannerPic}}" data-item="{{item}}" bindtap="bannerJump" class="slide-image" width="100%"/>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="section section_gap">
+    <view class="section__title">horizontal scroll</view>
+    <scroll-view class="scroll-view_H" scroll-x>
+      <view id="green" class="scroll-view-item_H  bc_green"></view>
+      <view id="red"  class="scroll-view-item_H  bc_red"></view>
+      <view id="yellow" class="scroll-view-item_H  bc_yellow"></view>
+    </scroll-view>
+  </view>
+  
+  <view class="usermotto">
+   
+  </view>
+

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/learn/learn",
+    "pages/coursedetail/coursedetail",
+    "pages/programdetail/programdetail",
+    "pages/programlist/programlist",
+    "pages/mycourse/mycourse",
+    "pages/coursevideo/coursevideo",
+    "pages/coursepdf/coursepdf",
+    "pages/order/order",
+    "pages/preorder/preorder",
+    "pages/coupon/coupon",
+    "pages/information/information"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "赛点学堂",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#333",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "/images/icon/learn-select.png",
+        "iconPath": "/images/icon/learn.png",
+        "pagePath": "pages/learn/learn",
+        "text": "学习"
+      },
+      {
+        "selectedIconPath": "/images/icon/find-select.png",
+        "iconPath": "/images/icon/find.png",
+        "pagePath": "pages/index/index",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "/images/icon/my-select.png",
+        "iconPath": "/images/icon/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

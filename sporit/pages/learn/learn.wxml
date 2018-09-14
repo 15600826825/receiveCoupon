@@ -1,0 +1,51 @@
+
+·<view class="page">
+  <view class="navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+            <view class="navbar__title">{{item.name}}</view>
+          </view>
+      </block>
+      <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view style="position: absolute;top: 68rpx;width: 100%;height:{{contentHeight}}px">
+    <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange">
+    <!--精品课-->
+      <swiper-item>
+        <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="loadMoreCenter" style="height: 100%;"> 
+          <view class='learn-course'>
+            <view class='learn-left-warp'  wx:for="{{contentData}}" wx:key="{{index}}"  data-goodsid= "{{item.goodsId}}" data-tradeno= "{{item.tradeNo}}" bindtap='bindCourseDetail'> 
+              <view class='learn-left-image' style="background-image: url(https://study.sporit.cn{{item.goodsCover}});background-size: 100% 100%;"></view>
+              <text class='learn-left-info'>{{item.goodsName}}</text>
+            </view>
+          </view>       
+        </scroll-view> 
+      </swiper-item>
+    <!--证书课-->
+      <swiper-item>
+       <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="loadMoreCenter" style="height: 100%;"> 
+          <view class='learn-course'>
+            <view class='learn-center-warp' wx:for="{{contentData}}" wx:key="{{index}}"  data-goodsid= "{{item.goodsId}}" data-goodsname= "{{item.goodsName}}" data-tradeno= "{{item.tradeNo}}" bindtap='bindPackageDetail'>
+              <view class='learn-center-image' style="background-image: url(https://study.sporit.cn{{item.goodsCover}});background-size: 100% 100%;"></view>
+              <view class='learn-center-info'>
+                <view class='learn-center-title'>{{item.goodsName}}</view>
+                <text class='learn-center-text'>{{item.goodsTitle}}</text>
+              </view>              
+            </view>
+          </view>       
+        </scroll-view>     
+      </swiper-item>
+       <!--公开课-->
+      <swiper-item>
+       <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="loadMoreCenter" style="height: 100%;"> 
+          <view class='learn-course'>
+            <view class='learn-right-warp' wx:for="{{contentData}}" wx:key="{{index}}"  data-goodsid= "{{item.goodsId}}" data-tradeno= "{{item.tradeNo}}" style="background-image: url(https://study.sporit.cn{{item.goodsCover}});background-size: 100% 100%;" bindtap='bindCourseDetail'>
+              <view class='learn-right-image'></view>
+              <text class='learn-right-info'>{{item.goodsName}}</text>
+            </view>
+          </view>       
+        </scroll-view> 
+      </swiper-item>
+    </swiper> 
+  </view>
+</view>

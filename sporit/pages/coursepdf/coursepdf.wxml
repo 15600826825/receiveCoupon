@@ -1,0 +1,3 @@
+<view class="page">
+  <canvas v-for="page in pages" :id="'the-canvas'+page" :key="page" width="100%"></canvas>
+</view>

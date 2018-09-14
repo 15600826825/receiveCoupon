@@ -1,0 +1,33 @@
+<view class="page">
+  <scroll-view scroll-y="true" scroll-top="{{scrollTop}}"  style="height: 100%;"> 
+    <view class='order-warp'>
+      <view class='order-list'  wx:for="{{contentData}}" wx:key="{{index}}">
+        <view class='order-list-top'>
+          <view class='order-list-left' style="background-image: url(https://study.sporit.cn{{item.goodsCover}});background-size: 100% 100%;"></view>
+          <view class='order-list-right'>
+              <view class='order-list-right-title'>{{item.goodsName}}</view>
+              <view class='order-list-right-content'>
+                <view class='order-list-right-content1'>订单号：</view>
+                <view class='order-list-right-content2'>{{item.tradeNo}}</view>              
+              </view>
+              <view class='order-list-right-content'>
+                <view class='order-list-right-content1'>订单金额：</view>
+                <view class='order-list-right-content2'>¥{{item.userPayment}}</view>              
+              </view>
+              <view class='order-list-right-content'>
+                <view class='order-list-right-content1'>订单状态：</view>
+                <view wx:if='{{item.orderStatus==1}}' data-id= "{{item.orderId}}" class='order-list-right-content2 order-status' bindtap='bindPayOrder'>未付</view>  
+                <view wx:if='{{item.orderStatus==2}}' class='order-list-right-content2'>已支付</view>  
+                <view wx:if='{{item.orderStatus==3}}' class='order-list-right-content2'>已取消</view>           
+                <view wx:if='{{item.orderStatus==4}}' class='order-list-right-content2'>订单超时</view>           
+                <view wx:if='{{item.orderStatus==5}}' class='order-list-right-content2'>已退款</view>           
+                <view wx:if='{{item.orderStatus==6}}' class='order-list-right-content2'>已申请退款</view>           
+                <view wx:if='{{item.orderStatus==7}}' class='order-list-right-content2'>申请退款失败</view>              
+              </view>
+          </view>
+        </view>
+        <view class='order-bottom'>查看更详细的订单信息请登录pc端study.sporit.cn</view>
+      </view>
+    </view>       
+  </scroll-view> 
+</view>

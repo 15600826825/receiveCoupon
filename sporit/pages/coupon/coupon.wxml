@@ -1,0 +1,21 @@
+<view class="page">
+  <scroll-view scroll-y="true" scroll-top="{{scrollTop}}"  style="height: 100%;"> 
+    <view class='coupon-warp'>
+      <view wx:for='{{couponList}}' wx:key='{{index}}' class='coupon-list {{item.canUse==true?"coupon-list-gary":""}} {{item.canUse==false&&item.select==true?"coupon-list-back-active":""}}' data-id= "{{item.couponId}}"  data-index= "{{index}}" bindtap='bindSelectCoupon'>
+          <view class='coupon-list-left'>
+            <view class='coupon-list-left-tip'>{{item.couponTitle}}</view>
+            <view wx:if='{{item.couponType==1}}' class='coupon-list-left-price'>￥{{item.couponPrice}}</view>
+            <view wx:else class='coupon-list-left-price'>{{item.couponPrice*10}} 折</view>
+            <view class='coupon-list-left-date'>有效期截止：{{item.couponLimitdate}}</view>
+          </view>
+          <view class='coupon-list-right'>
+            <view class='coupon-list-right-text'>去</view>
+            <view class='coupon-list-right-text'>选</view>
+            <view class='coupon-list-right-text'>课</view>
+            <image class="coupon-list-right-img" src="../../images/image/coupon-down.png"></image>
+          </view>
+          <image wx:if='{{item.canUse==false && item.select==true}}' class='coupon-list-active' src='../../images/image/coupon-list-active.png'></image>
+      </view>  
+    </view>       
+  </scroll-view> 
+</view>

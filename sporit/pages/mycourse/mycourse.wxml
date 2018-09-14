@@ -1,0 +1,33 @@
+<view class='page'>
+  <view class='mycourse-top'>
+    <view class='mycourse-top-shade'></view>
+    <view class='mycourse-top-content'>
+      <view class='mycourse-top-content-title'>{{contentData.courseName}}</view>
+      <Select class='mycourse-top-content-select' prop-array='{{contentData.courseChapter}}'></Select>
+    </view>
+  </view>
+  <view class='mycourse-scroll-view'>
+    <scroll-view  scroll-y="true" scroll-top="{{scrollTop}}" style="height: 100%;"> 
+      <view class='mycourse-content'>
+        <view class='mycourse-content-section' wx:for='{{courseSection}}' wx:key='{{index}}' bindtap='bindSelectSection' data-id='{{item.sectionId}}' data-type='{{item.sectionType}}'>
+          <view class='mycourse-content-section-title'>{{item.mainTitle}}</view>
+          <view class='mycourse-content-section-text'>{{item.subTitle}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='mycourse-learn' bindtap='learnCourse'>
+    <view class='mycourse-learn-left'>
+      <view class='mycourse-learn-left-tip'>继续学习：</view>
+      <view class='mycourse-learn-left-chapter'>{{userCourse.chapterTitle}}</view>
+      <view class='mycourse-learn-left-chapter'>{{userCourse.sectionTitle}}</view>
+    </view>
+    <view class='mycourse-learn-right' style="background-image: url(https://study.sporit.cn/file_service/miniapp/mycourse-play.png);background-size: 100% 100%;">
+    </view>
+  </view>
+
+
+
+
+
+</view>

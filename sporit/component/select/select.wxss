@@ -1,0 +1,56 @@
+.com-selectBox{
+  width: 550rpx;
+  margin: 0 auto;
+  margin-top: 20rpx; 
+}
+
+.com-sContent{
+  border: 1rpx solid #e2e2e2;
+  background: white;
+  font-size: 26rpx;
+  position: relative;
+  height: 60rpx;
+  line-height: 60rpx;
+   border-radius: 4rpx;
+}
+
+.com-sImg{
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  transition: all .3s ease;
+}
+.com-sTxt{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding:0 48rpx 0 12rpx;
+  font-size: 26rpx;
+}
+.com-sList{
+  background: white;
+  width: inherit;
+  position: absolute;
+  border: 1rpx solid #e2e2e2;
+  border-top: none;
+  box-sizing: border-box;
+  z-index: 3;
+  max-height: 240rpx;
+  overflow: auto;
+}
+.com-sItem{
+  height: 60rpx;
+  line-height: 60rpx;
+  border-top: 1rpx solid #e2e2e2;
+  padding: 0 12rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+}
+.com-sItem:first-child{
+  border-top: none;
+}

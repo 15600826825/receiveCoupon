@@ -1,0 +1,257 @@
+.program-top{
+  width: 100%;
+  height: 440rpx;
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+}
+
+.program-zhezhao{
+  width: 100%;
+  height: 440rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(224,221,221,0.7);
+}
+
+.program-zhezhao-text{
+  width: 100%;
+  height: 440rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.program-top-title{
+  font-size: 34rpx;
+  text-align: center;
+  margin: 116rpx 0 30rpx;
+}
+
+.program-top-info{
+  width: 570rpx;
+  overflow: hidden;
+  font-size: 26rpx;
+  margin: 0 auto;
+  word-break: break-all ;
+  text-align: center;
+}
+
+.program-top-logo{
+  display: flex;
+  justify-content: space-between;
+  width: 310rpx;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+
+.program-top-image{
+  width: 130rpx;
+  height: 44rpx;
+}
+
+.program-course{
+  margin: 30rpx;
+  padding-top: 30rpx;
+  overflow: hidden;
+  background: #fff;
+  border-radius:8px;
+  box-shadow: 2px 8px 14px rgba(224,221,221,0.7);
+}
+
+.program-course-warp:last-child{
+  margin-bottom: 118rpx;
+}
+
+.program-course-center{
+  width: 630rpx;
+  padding: 0 30rpx;
+  display: flex;
+  overflow: hidden;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.program-course-center-img{
+  width: 200rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+
+.program-course-center-image{
+  width: 100%;
+  height: 100%;
+}
+
+.program-course-center-info{
+  width: 320rpx;
+  overflow: hidden;
+  flex: 1;
+}
+
+.program-course-center-name{
+  font-size: 26rpx;
+  color: #666;
+  line-height: 34rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.program-course-center-post{
+  font-size: 24rpx;
+  color: #666;
+  line-height: 34rpx;
+  margin-bottom: 10rpx;
+}
+
+.program-course-bottom{
+  width: 630rpx;
+  padding: 0 30rpx;
+  height: 84rpx;
+  color: #EF4636;
+  font-size: 26rpx;
+  line-height: 84rpx;
+  text-align: right;
+  border-top: 1px solid #f6f6f6;
+  margin-top: 30rpx;
+}
+
+.program-course-bottom-image{
+  width: 40rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 30rpx;
+  margin-right: 10rpx;
+}
+
+.program-course-bottom-text{
+  float: right;
+}
+
+.program-content{
+  margin: 30rpx;
+  overflow: hidden;
+  background: #fff;
+  border-radius:8px;
+  box-shadow:2px 8px 14px rgba(224,221,221,0.7);
+  margin-bottom: 118rpx;
+}
+
+.program-content-video{
+  width: 100%;
+  height: 210rpx;
+  overflow: hidden;
+}
+
+.program-video-play{
+  width: 100%;
+  height: 210rpx;
+}
+
+.program-brief{
+  padding: 30rpx 30rpx 20rpx;
+  overflow: hidden;
+}
+
+.program-brief-title{
+  font-size: 26rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.program-brief-info{
+  font-size: 22rpx;
+  color: #666;
+  line-height: 34rpx;
+  display: block;
+}
+
+.program-content-center{
+  width: 630rpx;
+  padding: 30rpx;
+  display: flex;
+  overflow: hidden;
+  border-top: 2rpx solid #f6f6f6;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+
+.coursedetail-outline{
+  padding-top: 30rpx;
+  overflow: hidden;
+}
+
+.coursedetail-outline-title{
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.coursedetail-outline-chapter{
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+
+.coursedetail-outline-buttom{
+  width: 630rpx;
+  padding: 0 30rpx;
+  height: 84rpx;
+  color: #EF4636;
+  font-size: 26rpx;
+  line-height: 84rpx;
+  text-align: right;
+  border-top: 1px solid #f6f6f6;
+  margin-top: 30rpx;
+}
+
+.coursedetail-outline-buttom-image{
+  width: 40rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 28rpx;
+  margin-right: 10rpx;
+}
+
+.coursedetail-outline-buttom-text{
+  float: right;
+}
+
+.receive-coupon-button{
+  position: fixed;
+  font-size: 30rpx;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  float: left;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: #fff;
+  outline:none;
+  list-style: none;
+  border-radius: 0;
+  background: #F54039;
+}
+
+.receive-coupon-button::after{
+  border: 0;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+} 
+
+.receive-coupon-button:focus{
+  outline: 0;
+  border: 0;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}

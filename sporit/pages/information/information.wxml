@@ -1,0 +1,75 @@
+<view class='page'>
+  <view class='info-warp'>
+    <view class='info-list-top'>
+      <view class='info-list-left-top'>头像</view>
+      <view class='info-list-right-top'>
+        <image class='info-list-right-img' src="{{userImg}}"></image>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>昵称</view>
+      <view class='info-list-right'>
+        <text class='info-list-right-text'>Amarantine</text>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>性别</view>
+      <view class='info-list-right'>
+        <text class='info-list-right-text'>女</text>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>手机号</view>
+      <view class='info-list-right'>
+      <text class='info-list-right-text'>15600826825</text>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>学历</view>
+      <view class='info-list-right'>
+        <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}" >
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>行业</view>
+      <view class='info-list-right'>
+        <picker bindchange="bindPickerChange" range="{{position}}" value="{{index}}" >
+          <view class="picker">
+            {{position[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>职位</view>
+      <view class='info-list-right'>
+        <input  class='info-list-right-input' name="input" placeholder="请输入职位"/>
+      </view>
+    </view>
+     <view class='info-list'>
+      <view class='info-list-left'>生日</view>
+      <view class='info-list-right'>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker">{{date}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-list-left'>地域</view>
+      <view class='info-list-right'>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </picker> 
+      </view>
+    </view>
+    <view class='info-button-warp'>
+      <view class='info-button-text'>保存</view>
+    </view>
+  </view>
+</view>

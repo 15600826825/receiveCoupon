@@ -1,0 +1,122 @@
+view , page {
+  padding: 0px;
+  margin: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.mycourse-top{
+  width: 100%;
+  height: 236rpx;
+  font-size: 26rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* overflow: hidden; */
+}
+
+.mycourse-top-shade{
+  width: 100%;
+  height: 236rpx;
+  background: #F02A3A;
+}
+
+.mycourse-top-content{
+  width: 100%;
+  height: 236rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.mycourse-top-content-title{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  margin-top: 64rpx;
+}
+
+.mycourse-scroll-view{
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 236rpx;
+  left: 0;
+  right: 0;
+  bottom: 220rpx;
+}
+
+.mycourse-content{
+  width: 100%;
+  overflow: hidden;
+}
+
+.mycourse-content-section{
+  margin: 30rpx;
+  overflow:hidden;
+  border-radius:8px;
+  box-shadow:4px 4px 10px rgba(212,212,212,1);
+  font-size: 26rpx;
+  padding: 38rpx;
+}
+
+.mycourse-content-section-title{
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.mycourse-content-section-text{
+  font-size: 26rpx;
+  color: #666;
+}
+
+.mycourse-learn{
+  padding: 30rpx;
+  height: 164rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1rpx solid #ededed;
+}
+
+.mycourse-learn-left{
+  font-size: 26rpx;
+  width: 610rpx;
+  height: 164rpx;
+  overflow: hidden;
+  float: left;
+}
+
+.mycourse-learn-left-tip{
+  width: 100%;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 26rpx;
+}
+
+.mycourse-learn-left-chapter{
+  width: 100%;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.mycourse-learn-right{
+  font-size: 26rpx;
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  float: right;
+  border-radius: 50%; 
+  margin-top: 41rpx;
+}
+

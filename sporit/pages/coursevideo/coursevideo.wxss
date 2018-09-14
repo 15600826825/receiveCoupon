@@ -1,0 +1,191 @@
+view , page {
+  padding: 0px;
+  margin: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.oursevideo-top{
+  width: 100%;
+  overflow: hidden;
+}
+
+.coursevideo-top-section{
+  width: 100%;
+  font-size: 28rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+
+.coursevideo-top--video{
+  width: 100%;
+  height: 380rpx;
+}
+
+.coursevideo-top-video-play{
+  width: 100%;
+  height: 380rpx;
+  padding: 0;
+}
+
+.course-top-comment{
+  padding: 30rpx;
+  height: 230rpx;
+  overflow: hidden;
+}
+
+.course-top-comment-text{
+  width: auto;
+  height: 100rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  color: #999;
+  border: 1px solid #D0D0D0;
+  padding: 10rpx;
+}
+
+.course-top-comment-placeholder{
+  font-size: 26rpx;
+  color: #999;
+  padding: 10rpx;
+  line-height: 30rpx;
+}
+
+.course-top-comment-button{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #fff;
+  background: #F54039; 
+  border-radius: 4rpx;
+  float: right;
+  margin-top: 30rpx;
+}
+
+.coursevideo-bottom{
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 700rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top:20rpx;
+}
+
+.coursevideo-bottom-content{
+  width: 100%;
+  overflow: hidden;
+  font-size: 26rpx;
+}
+
+.coursevideo-bottom-list{
+  margin: 0 30rpx;
+  overflow: hidden;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+
+.coursevideo-bottom-left{
+  width: 60rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.coursevideo-bottom-left-image{
+  width: 60rpx;
+  height: 60rpx;
+  overflow: hidden;
+  float: left;
+  background: red;
+  border-radius: 50%; 
+}
+
+.coursevideo-bottom-right{
+  width: 615rpx;
+  float: right;
+  overflow: hidden;
+}
+
+.coursevideo-bottom-right-top{
+  width: 100%;
+  overflow: hidden;
+  height: 60rpx;
+}
+
+.coursevideo-bottom-right-top-left{
+  width: 60%;
+  height: 60rpx;
+  float: left; 
+}
+
+.coursevideo-bottom-right-top-name{
+  font-size: 24rpx;
+  color: #666;
+}
+
+.coursevideo-bottom-right-top-time{
+  color: #999;
+  font-size: 20rpx;
+}
+
+.coursevideo-bottom-right-top-right{
+  width: 40%;
+  height: 60rpx;
+  float: right;
+}
+
+.coursevideo-bottom-right-top-num{
+  font-size: 22rpx;
+  color: #999; 
+  line-height: 60rpx;
+  float: right;
+}
+
+.coursevideo-bottom-right-top-icon{
+  width: 30rpx;
+  height: 30rpx;
+  overflow: hidden;
+  float: right;
+  margin-top: 15rpx;
+  margin-right: 10rpx;
+}
+
+.coursevideo-bottom-right-top-icon-tag{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.coursevideo-bottom-list-info{
+  margin-top: 20rpx;
+  color:#333;
+  line-height: 40rpx;
+  font-size: 26rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

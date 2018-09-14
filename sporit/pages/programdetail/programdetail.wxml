@@ -1,0 +1,61 @@
+<scroll-view scroll-y="true"  style="height: 100%;">
+  <view class='program-top' style="background-image: url(https://study.sporit.cn{{contentData.packageImag}});background-size: 100% 100%;">
+    <view class="program-zhezhao" style="background-image: url(https://study.sporit.cn/file_service/miniapp/program-zhezhao.png);background-size: cover"></view>
+    <view class="program-zhezhao-text">
+      <view class='program-top-title'>{{contentData.packageName}}</view>
+      <view class='program-top-info'>
+        <text class='program-top-info-text'>{{contentData.packageTitle}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='program-course-warp'  wx:for="{{contentData.courses}}" wx:key='{{index}}'>
+    <view class='program-course' wx:if="{{item.unfold==false}}">
+      <view class='program-course-center'>
+        <view class='program-course-center-img'>
+            <image class='program-course-center-image' src="https://study.sporit.cn{{item.courseImage}}"></image>
+        </view>
+        <view class='program-course-center-info'>
+          <view class='program-course-center-name'>{{item.courseName}}</view>
+          <view class='program-course-center-post'>{{item.courseTitle}}</view>
+        </view>
+      </view> 
+      <view class='program-course-bottom' bindtap="changeContent" data-index= "{{index}}">
+        <text class='program-course-bottom-text'>了解更多</text>
+        <image class='program-course-bottom-image' src='../../images/image/program-icon-down.png'></image>
+      </view> 
+    </view>
+    <view class='program-content' wx:if="{{item.unfold}}">
+      <view class='program-content-video'>
+        <video id="myVideo" class='program-video-play' bindplay="bindplay" objectFit='cover' poster='https://study.sporit.cn{{item.courseImage}}' src="{{item.courseTrailer}}" binderror="videoErrorCallback" controls></video>
+      </view>
+      <view class='program-brief'>
+        <view class='program-brief-title'>{{item.courseName}}</view>
+        <text class='program-brief-info'>{{item.courseTitle}}</text>
+      </view>
+
+      <view class='program-content-center' wx:for="{{item.courseMentor}}" wx:key="{{index}}" wx:for-item="mertorItem">
+        <view class='program-course-center-img'>
+            <image class='program-course-center-image' src="https://study.sporit.cn{{mertorItem.mentorImage}}"></image>
+        </view>
+        <view class='program-course-center-info'>
+          <view class='program-course-center-name'>{{mertorItem.mentorName}}</view>
+          <view class='program-course-center-post' wx:for="{{mertorItem.mentorTitle}}" wx:key='{{index}}' wx:for-item="mentorListItem">{{mentorListItem}}</view>
+        </view>
+      </view> 
+      <view class='coursedetail-outline'>
+        <view class='coursedetail-outline-title'>课程大纲</view>
+        <view class='coursedetail-outline-chapter'  wx:for="{{item.courseChapter}}" wx:key="{{index}}" wx:for-item="chapterItem">{{chapterItem.chapterTitle}}</view>
+        <view class='coursedetail-outline-buttom' bindtap="changeContentPack"  data-index= "{{index}}">
+          <text class='coursedetail-outline-buttom-text'>收起</text>
+          <image class='coursedetail-outline-buttom-image' src='../../images/image/program-icon-up.png'></image>   
+        </view> 
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<button  wx:if="{{getPhone==false}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='receive-coupon-button' >
+  <text>领取优惠券</text>
+</button>
+<button wx:if="{{getPhone}}" bindtap="bindtapNumber" class='receive-coupon-button' >
+  <text>领取优惠券</text>
+</button>

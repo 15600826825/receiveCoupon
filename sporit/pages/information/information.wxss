@@ -1,0 +1,99 @@
+@import "../../lib/weui.wxss";
+.picker{
+    width: 550rpx;
+    height: 98rpx;
+    text-align: right;
+    background-color: #FFFFFF;
+}
+
+.info-list-right-input{
+    width: 550rpx;  
+    height: 98rpx;
+    text-align: right;
+    background-color: #FFFFFF;
+}
+
+view , page {
+  padding: 0px;
+  margin: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.info-warp{
+  overflow: hidden;
+  margin: 0 30rpx;
+  font-size: 30rpx;
+  color: #464646;
+}
+
+.info-list-top{
+  width: 100%;
+  height: 160rpx;
+  line-height: 160rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+
+.info-list-left-top{
+  width: 140rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.info-list-right-top{
+  width: 550rpx;
+  height: 160rpx;
+  float: right;
+  overflow: hidden;
+}
+
+.info-list-right-img {
+  float: right;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+}
+
+.info-list{
+  width: 100%;
+  height: 98rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+
+.info-list-left{
+  width: 140rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.info-list-right{
+  width: 550rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  float: right;
+  overflow: hidden;
+}
+
+.info-list-right-text{
+  float: right;
+}
+
+.info-button-warp{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #F54039;
+  text-align: center;
+  color: #fff;
+  border-radius: 44rpx;
+  margin-top: 30rpx;
+}
+

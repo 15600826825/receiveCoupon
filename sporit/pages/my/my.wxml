@@ -1,0 +1,42 @@
+<view class="userBox">
+    <button class="userHeader" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <image class='userHeader-img' src="{{userImg}}"></image>
+    </button>
+    <view class="userNick">
+            {{userName}}
+    </view>
+</view>
+<view class="my_item_box">
+    <view class="my_item" bindtap="jumpPackage">
+      <image class="icon" src="../../images/image/my-icon-left.png"></image>
+      <text class='my_item_text'>我的订单</text>
+      <image class="icon-right" src="../../images/image/my-icon.png"></image>
+    </view>
+    <view class="my_item" bindtap="jumpPackage">
+      <image class="icon" src="../../images/image/my-icon-left.png"></image>
+      <text class='my_item_text'>优惠券</text>
+      <image class="icon-right" src="../../images/image/my-icon.png"></image>
+    </view>
+    <!-- <view class="my_item" bindtap="jumpPackage">
+      <image class="icon" src="../../images/image/my-icon-left.png"></image>
+      <text class='my_item_text'>我的消息</text>
+      <image class="icon-right" src="../../images/image/my-icon.png"></image>
+    </view> -->
+    <view class="my_item" bindtap="jumpPackage">
+      <image class="icon" src="../../images/image/my-icon-left.png"></image>
+      <text class='my_item_text'>常见问题</text>
+      <image class="icon-right" src="../../images/image/my-icon.png"></image>
+    </view>
+     <view class="my_item" bindtap="jumpPackage">
+      <image class="icon" src="../../images/image/my-icon-left.png"></image>
+      <text class='my_item_text'>用户协议</text>
+      <image class="icon-right" src="../../images/image/my-icon.png"></image>
+    </view>
+     <view class="my_item" bindtap="jumpPackage">
+      <image class="icon" src="../../images/image/my-icon-left.png"></image>
+      <button class='my-button' open-type="contact" >
+          <text class='my_item_text'>我的客服</text>
+      </button>
+      <image class="icon-right" src="../../images/image/my-icon.png"></image>
+    </view>
+</view>

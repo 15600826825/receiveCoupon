@@ -1,0 +1,73 @@
+<scroll-view scroll-y="true"  style="height: 100%;">
+  <view class="coursedetail-video">
+    <video id="myVideo" class='coursedetail-video-play' poster="https://study.sporit.cn{{contentData.courseImage}}"    bindplay="bindplay" src="{{contentData.courseTrailer}}"  objectFit='cover' binderror="videoErrorCallback" controls>
+    </video>
+  </view>
+  <view class='coursedetail-top'>
+    <view class='coursedetail-top-center'>
+      <text class='coursedetail-top-center-title'>学习人数</text>
+      <view class='coursedetail-top-center-info'>{{contentData.courseLearnCount}}位</view>
+    </view>
+     <view class='coursedetail-top-center'>
+      <text class='coursedetail-top-center-title'>课程时长</text>
+      <view class='coursedetail-top-center-info'>{{contentData.courseDuration}}分钟</view>
+    </view>
+     <view class='coursedetail-top-center'>
+      <text class='coursedetail-top-center-title'>课程价格</text>
+      <view class='coursedetail-top-center-info coursedetail-top-center-price'>{{contentData.coursePrice}}元</view>
+    </view>
+  </view>
+  <view class='coursedetail-brief'>
+    <view class='coursedetail-brief-title'>课程简介</view>
+    <text class='coursedetail-brief-info'>{{contentData.courseDesc1}}</text>
+  </view>
+  <view class='coursedetail-outline'>
+    <view class='coursedetail-outline-title'>课程大纲</view>
+    <view class='coursedetail-outline-container'>
+      <view class='coursedetail-outline-chapter'>{{contentData.courseChapter[0].chapterTitle}}</view>
+       <view class='coursedetail-outline-chapter'>
+         <text class='coursedetail-outline-info'>{{contentData.courseChapter[0].chapterDesc}}</text>
+      </view>  
+      <!-- <view class='coursedetail-outline-section' wx:for="{{contentData.courseChapter[0].courseSection}}" wx:key='{{index}}' wx:for-item="sectionItem">
+        <view class='coursedetail-outline-section-dot'></view>
+        <text class='coursedetail-outline-section-text'>{{sectionItem.sectionTitle}}</text>
+      </view> -->
+    </view>
+    <view class='coursedetail-outline-container' wx:for="{{contentData.courseChapter}}" wx:key='{{index}}' wx:if="{{contentShow && index!=0}}">
+      <view class='coursedetail-outline-chapter'>{{item.chapterTitle}}</view>
+      <view class='coursedetail-outline-chapter'>
+        <text class='coursedetail-outline-info'>{{item.chapterDesc}}</text>
+      </view>  
+      <!-- <view class='coursedetail-outline-section' wx:for="{{item.courseSection}}" wx:key='{{index}}' wx:for-item="sectionItem">
+        <view class='coursedetail-outline-section-dot'></view>
+        <text class='coursedetail-outline-section-text'>{{sectionItem.sectionTitle}}</text>
+      </view> -->
+    </view>
+    <view class='coursedetail-outline-bottom' bindtap='changeContent' wx:if='{{contentData.courseChapter.length>0}}'>
+        <text class='coursedetail-outline-buttom-text'>{{contentText}}</text>
+        <image class='coursedetail-outline-buttom-image' src='{{contentShow== true ? "../../images/image/program-icon-up.png" : "../../images/image/program-icon-down.png" }}'></image>
+    </view>
+  </view>
+  <view class='coursedetail-lecturer' wx:if="{{contentData.courseMentor}}">
+    <view class='coursedetail-lecturer-title'>导师介绍</view>
+    <view wx:for='{{contentData.courseMentor}}' wx:key="{{index}}">
+      <view class='coursedetail-lecturer-center'>
+        <view class='coursedetail-lecturer-center-img'>
+           <image class='coursedetail-lecturer-center-image' src="https://study.sporit.cn{{item.mentorImage}}"></image>
+        </view>
+        <view class='coursedetail-lecturer-center-info'>
+          <view class='coursedetail-lecturer-center-name'>{{item.mentorName}}</view>
+          <view class='coursedetail-lecturer-center-post' wx:for="{{item.mentorTitle}}" wx:key='{{index}}' wx:for-item="mentorItem">{{mentorItem}}</view>
+        </view>
+      </view>  
+      <text class='coursedetail-lecturer-info'>{{item.mentorDesc}}</text> 
+    </view>
+  </view>
+</scroll-view>
+<!-- <button  wx:if="{{getPhone==false}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='receive-coupon-button' >
+  <text>领取优惠券</text>
+</button> -->
+<button bindtap="bindTapPay" class='receive-coupon-button' >
+  <text>立即购买</text>
+</button>
+

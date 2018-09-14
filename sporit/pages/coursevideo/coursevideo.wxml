@@ -1,0 +1,43 @@
+<view class='page'>
+  <view class='coursevideo-top'>
+      <view class='coursevideo-top-section'>{{contentData.name}}</view>
+      <view class="coursevideo-top--video">
+        <video id="myVideo" class='coursevideo-top-video-play' poster="https://study.sporit.cn{{contentData.coverURL}}"    bindplay="bindplay" src="{{contentData.playURL}}"  objectFit='cover' binderror="videoErrorCallback" controls>
+        </video>
+      </view> 
+      <view class='course-top-comment'>
+        <form bindsubmit="evaSubmit">
+          <textarea name="comments" value="{{comments}}" class='course-top-comment-text' bindblur="charChange" placeholder-class="course-top-comment-placeholder"  placeholder="评论一下这门课程吧..." />
+          <button class='course-top-comment-button' formType="submit" disabled="{{subdisabled}}">发表</button>
+        </form>
+      </view>
+  </view>
+  <view class='coursevideo-bottom'>
+     <scroll-view  scroll-y="true" scroll-top="{{scrollTop}}" style="height: 100%;" bindscrolltolower="loadMoreComment"> 
+      <view class='coursevideo-bottom-content'>
+        <view class='coursevideo-bottom-list'  wx:for="{{commentData}}" wx:key='{{index}}'>
+          <view class='coursevideo-bottom-left'>
+            <view wx:if='{{item.userImage}}' class='coursevideo-bottom-left-image' style="background-image: url({{item.userImage}});background-size: cover;"></view>
+            <view wx:else class='coursevideo-bottom-left-image' style="background-image: url(https://study.sporit.cn/file_service/miniapp/my-defalut.png);background-size: cover;"></view>
+          </view>
+          <view class="coursevideo-bottom-right">
+            <view class='coursevideo-bottom-right-top'>
+              <view class='coursevideo-bottom-right-top-left'>
+                <view wx:if='{{item.userNickName}}' class='coursevideo-bottom-right-top-name'>{{item.userNickName}}</view>
+                <view wx:else class='coursevideo-bottom-right-top-name'>{{item.userNickName}}</view>
+                <view class='coursevideo-bottom-right-top-time'>{{item.commentsCreatedate}}</view>
+              </view>             
+              <view class='coursevideo-bottom-right-top-right' bindtap='bindLike' data-id='{{item.commentsId}}'>
+                <view class='coursevideo-bottom-right-top-num'>{{item.commentsAwesome}}</view>
+                <view class='coursevideo-bottom-right-top-icon'>
+                  <image class='coursevideo-bottom-right-top-icon-tag' src='../../images/image/coursevideo-tags.png'></image>
+                </view>
+              </view>
+            </view>           
+             <view class='coursevideo-bottom-list-info'>{{item.commentsContent}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

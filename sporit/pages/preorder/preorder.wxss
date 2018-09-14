@@ -1,0 +1,170 @@
+view , page {
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: #FAFAFA;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  right: 0;
+}
+
+.preorder-top{
+  margin-bottom: 30rpx;
+  padding: 30rpx; 
+  overflow: hidden;
+  background: #fff;
+  font-size: 26rpx;
+}
+
+.preorder-top-left{
+  width: 184rpx;
+  height: 144rpx;
+  float: left;
+  background: red;
+}
+
+.preorder-top-right{
+  width: 480rpx;
+  float: right;
+  overflow: hidden;
+}
+
+.preorder-top-right-title{
+  font-size: 34rpx;
+  width: 100%;
+  color: #333;
+}
+
+.preorder-top-right-info{
+  font-size: 26rpx;
+  width: 100%;
+  color: #333;
+  margin: 10rpx 0;
+}
+
+.preorder-top-right-price{
+  font-size: 30rpx;
+  color: #F54039;
+}
+
+.preorder-service{
+  height: 124rpx;
+  padding: 0 30rpx;
+  overflow: hidden;
+  background: #fff;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.preorder-service-left{
+  width: 660rpx;
+  float: left;
+  line-height: 124rpx;
+}
+
+.preorder-service-text{
+  width: 540rpx;
+  height: 124rpx;
+  margin-left: 20rpx;
+  line-height: 124rpx;
+  display: inline-block;
+}
+
+.wx-switch-input{
+  width: 80rpx !important;
+  height: 36rpx !important;
+  background: #f54039 !important;
+  border: #333 !important;
+}
+
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  width: 80rpx !important;
+  height: 36rpx !important;
+}
+
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 44rpx !important;
+  height: 36rpx !important;
+}
+
+.preorder-service-icon{
+  float: right;
+  margin-top: 47rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.preorder-coupon{
+  padding: 0 30rpx;
+  height: 124rpx;
+  overflow: hidden;
+  background: #fff;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.preorder-coupon-left{
+  width: 500rpx;
+  float: left;
+  line-height: 124rpx;
+}
+
+.preorder-coupon-icon{
+  float: right;
+  margin-top: 47rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.preorder-bottom{
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+.preorder-bottom-list{
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #FAFAFA;
+}
+
+.preorder-bottom-left{
+  width: 190rpx;
+  height: 100rpx;
+  float: left;
+  line-height: 100rpx;
+}
+
+.preorder-bottom-right{
+  width: 500rpx;
+  height: 100rpx;
+  float: right;
+  line-height: 100rpx;
+  text-align: right;
+  color: #f54039;
+}
+
+.preorder-button{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  background: #f54039;
+  text-align: center;
+  font-size: 30rpx;
+}

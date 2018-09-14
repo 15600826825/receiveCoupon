@@ -1,0 +1,122 @@
+<view class="page">
+  <view class="navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+            <view class="navbar__title">{{item.name}}</view>
+          </view>
+      </block>
+      <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view style="position: absolute;top: 68rpx;width: 100%;height:{{contentHeight}}px">
+    <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange">
+    <!--中间部分精品课-->
+      <swiper-item>
+        <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="loadMoreCenter" style="height: 100%;"> 
+          <!-- 中间横向滚动部分  -->
+          <scroll-view class="scroll-view_H" style="height: 310rpx;" scroll-left="{{scrollLeft}}" scroll-x>
+            <button class="scroll-view-item_H scroll-view-left index-left-top" wx:for="{{leftTopData}}" wx:key="{{index}}"  data-id= "{{item.courseId}}" data-name= "{{item.courseName}}"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+              <view class="index-scroll-img" style="background-image: url(https://study.sporit.cn{{item.courseImage}});background-size: cover;"></view>
+              <view class="index-scroll-info">
+                <text class="index-scroll-text">{{item.courseName}}</text>
+              </view> 
+            </button>
+          </scroll-view>
+          <!-- 中间列表部分  -->
+          <view class='index-center-container'>
+            <view class='index-center-course-warp' wx:for="{{leftData}}" wx:key="{{index}}">
+              <view class='index-center-course'>
+                <view  class='index-center-course-img' style="background-image: url(https://study.sporit.cn{{item.courseImage}});background-size: 100% 100%;">
+                    <view  class='index-center-course-tag' style="background-image: url('https://study.sporit.cn/file_service/miniapp/index-center-tag.png');background-size: 100% 100%;">{{item.courseSalesTitle}}</view>
+                </view>
+                <view class='index-center-course-main'>
+                  <view class='index-center-course-title'>
+                    {{item.courseName}}
+                  </view>
+                  <text class='index-center-course-info'>{{item.courseTitle}}</text>
+                  <view class='index-center-course-price'>
+                    ￥{{item.coursePrice}}
+                    <view class='index-center-course-lecturer'>{{item.mentorName}} | {{item.mentorTitle[0]}}</view>
+                  </view>
+                </view>
+              </view>
+              <button class="index-center-button" open-type="getUserInfo" data-id= "{{item.courseId}}" data-name= "{{item.courseName}}"  bindgetuserinfo="bindGetUserInfo" >
+                <view class='index-center-button-text'>查看详情</view>
+              </button>
+            </view>
+          </view>
+        </scroll-view> 
+      </swiper-item>
+    <!--右侧部分证书课-->
+      <swiper-item>
+         <scroll-view scroll-top="{{scrollTop}}"  scroll-y="true" bindscrolltolower="loadMoreRight" style="height: 100%;"> 
+         <!-- 右侧列表部分 -->
+          <view class='index-right-container'>
+            <view class='index-right-course' wx:for='{{leftData}}' wx:key='{{index}}'>
+              <view class='index-right-course-img' style="background-image: url(https://study.sporit.cn{{item.packageImag}});background-size: 100% 100%;">
+              </view>
+              <view class='index-right-course-main'>
+                <view class='index-right-course-title'>
+                  <view class='index-right-course-title-text'>{{item.packageName}}</view>
+                  <view class='index-right-course-price'>￥{{item.packagePrice}}</view>
+                </view>
+               <text class='index-right-course-info'>{{item.packageTitle}}</text>
+                <button class="index-center-button index-right-button" open-type="getUserInfo" data-id= "{{item.packageId}}" data-name= "{{item.packageName}}" bindgetuserinfo="bindGetUserInfoPost">
+                  <view class='index-center-button-text'>查看详情</view>
+                </button>
+                <!-- <view class='index-right-course-bottom'>
+                   <view class='index-right-course-logo'></view>
+                </view> -->
+              </view>
+            </view>
+          </view>
+        </scroll-view> 
+      </swiper-item>
+       <!--左侧部分公开课-->
+      <swiper-item>
+        <scroll-view wx:if="{{leftTopData.length>0}}" scroll-top="{{scrollTop}}"  scroll-y="true" bindscrolltolower="loadMoreLeft" style="height: 100%;">
+         <!-- 横向滚动部分  --> 
+          <scroll-view class="scroll-view_H" scroll-x scroll-left="{{scrollLeft}}">
+            <button class="scroll-view-item_H scroll-view-left index-left-top" wx:for="{{leftTopData}}" wx:key="{{index}}"  data-id= "{{item.courseId}}" data-name= "{{item.courseName}}"   open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"   style="background-image: url(https://study.sporit.cn{{item.courseImage}});background-size: 100% 100%;">
+            <view class='index-zhezhao-text'>{{item.courseName}}</view>
+            <view class='index-zhezhao' wx:if='{{index==0}}' style="background-image: url(https://study.sporit.cn/file_service/miniapp/left-zhezhao1.png);background-size: 100% 100%;">             
+            </view>  
+            <view class='index-zhezhao' wx:if='{{index==1}}' style="background-image: url(https://study.sporit.cn/file_service/miniapp/left-zhezhao2.png);background-size: 100% 100%;">             
+            </view>  
+            <view class='index-zhezhao' wx:if='{{index==2}}' style="background-image: url(https://study.sporit.cn/file_service/miniapp/left-zhezhao3.png);background-size: 100% 100%;">        
+            </view>    
+            </button>
+          </scroll-view>
+          <!-- 列表部分  -->
+          <view class='index-center-container'>
+            <view class='index-center-course-warp' wx:for="{{leftData}}" wx:key="{{index}}" >
+              <view class='index-center-course'>
+                <view class='index-center-course-img' style="background-image: url(https://study.sporit.cn{{item.courseImage}});background-size: 100% 100%;">
+                    <view wx:if="{{item.courseSalesTitle}}"  class='index-center-course-tag' style="background-image: url('https://study.sporit.cn/file_service/miniapp/index-center-tag.png');background-size: 100% 100%;">{{item.courseSalesTitle}}</view>
+                </view>
+                <view class='index-center-course-main'>
+                  <view class='index-center-course-title'>
+                    {{item.courseName}}
+                  </view>
+                  <text class='index-center-course-info'>{{item.courseTitle}}</text>
+                  <view class='index-center-course-price'>
+                    ￥{{item.coursePrice}}
+                    <view wx:if='{{item.mentorName && item.mentorTitle}}' class='index-center-course-lecturer'>{{item.mentorName}} | {{item.mentorTitle[0]}}</view>
+                  </view>
+                </view>
+              </view>
+              <button class="index-center-button" open-type="getUserInfo" data-id= "{{item.courseId}}" data-name= "{{item.courseName}}" bindgetuserinfo="bindGetUserInfo" >
+                <view class='index-center-button-text'>查看详情</view>
+              </button>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="index-page">
+          <view class='index-page-container'>
+            <image class='not-open' src="../../images/image/not-open.png"></image>
+            <view class="not-open-text">暂无课程...</view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper> 
+  </view>
+</view>
